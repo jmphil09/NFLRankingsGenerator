@@ -40,12 +40,9 @@ object getRecord {
     var recordMap = Map("" -> (0, 0))
 
     for (key <- teamMap.keys) {
-      /*val recordStr = trimWebStr(key)
+      val recordStr = trimWebStr(key)
       val wins = getWins(recordStr)
-      val losses = getLosses(recordStr)*/
-      
-      val wins = 1
-      val losses = 0
+      val losses = getLosses(recordStr)
       recordMap = recordMap + (key -> (wins, losses))
     }
 
