@@ -20,7 +20,7 @@ package object rankingsGen {
         val opponents = team.opponents
         teamMap(k) = new team(name, wins, losses, opponents)
       }
-      teams
+      teamMap
     }
 
     def getRank(team: team): Double = {
