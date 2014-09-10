@@ -6,5 +6,7 @@ object mainfile {
   println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
   //getRecordMap("2014")
   
-  //generateRankings("2014", "test")
+  //generateRankings("2014", "2")
+  
+  val dummy = "DONE"                              //> dummy  : String = DONE
 }
