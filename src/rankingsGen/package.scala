@@ -37,14 +37,12 @@ package object rankingsGen {
       val oppWins = getOppWins(team.opponents.take(week.toInt-1), 0) + 0.0
       val oppLosses = getOppLosses(team.opponents.take(week.toInt-1), 0) + 0.0
       (wins) / (wins + losses) + ((oppWins) / (oppWins + oppLosses)) * (0.5)
-      //(team.wins + 0.0) / (team.wins + team.losses) + (getOppWins(team.opponents.take(week.toInt-1), 0) + 0.0) / (getOppWins(team.opponents.take(week.toInt-1), 0) + getOppLosses(team.opponents.take(week.toInt-1), 0)) * (0.5)
     }
 
     var teamRankings = Map(" " -> 0.0)
     val keys = teamNameMap.keys
 
     for (k <- keys) {
-      println(k)
       teamRankings = teamRankings + (teamNameMap(k) -> getRank(updateRecords(teamMap)(k)))
     }
     teamRankings -= " "
@@ -59,7 +57,7 @@ package object rankingsGen {
     var rankResult = new String 
     var counter = 1
     for (line <- teamRankings.toSeq.sortBy(_._2).reverse) {
-      rankResult += line.toString.drop(1).dropRight(4) + counter + "\n"
+      rankResult += line._1 + "," + counter + "\n" 
       counter = counter + 1
     }
     
