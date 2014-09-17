@@ -15,15 +15,16 @@ object getRecord {
         else nthOccurence(str.drop(1), substring, index + 1, counter)
       }
     }
+    
+    val dummySite = "http://espn.go.com/nfl/team/_/name/" + "dal" + "/year/" + year
+    val dummyStr = Source.fromURL(dummySite).mkString
+    val dropSubstr = year + " Regular Season Schedule"
+    val dropIndex = nthOccurence(dummyStr, dropSubstr, 0 , 1) - 500
 
     def getWebStr(team: String): String = {
       val site = "http://espn.go.com/nfl/team/_/name/" + team + "/year/" + year
       val str = Source.fromURL(site).mkString
-      
-      //USE THESE LINES IF trimmedStr DOES NOT WORK
-      //val dropIndex = nthOccurence(str, "2014 Regular Season Schedule", 0 , 1)
-      //val trimmedStr = str.drop(dropIndex)
-      val trimmedStr = str.drop(35300)
+      val trimmedStr = str.drop(dropIndex)
       
       val endIndex = nthOccurence(trimmedStr, """<li class="game-status">""", 0, week.toInt)
       
