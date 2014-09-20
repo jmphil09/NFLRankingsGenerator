@@ -6,7 +6,7 @@ import teamData._
 import scala.collection.mutable._
 
 package object rankingsGen {
-  def generateRankings(year: String, week: String): Unit = {
+  def generateRankings(year: String, week: String, user: String): Unit = {
     val teamRecordMap = getRecordMap(year, week)
     
     def updateRecords(teams: Map[String, team]): Map[String, team] = {
@@ -52,7 +52,7 @@ package object rankingsGen {
       strResult += line.toString.drop(1).dropRight(1) + "\n"
     }
    
-    fileWriter(year + "Week" + week + "Custom" + "Raw", strResult)
+    fileWriter(year + "Week" + week + "Custom" + "Raw", strResult, user)
     
     var rankResult = new String 
     var counter = 1
@@ -61,7 +61,7 @@ package object rankingsGen {
       counter = counter + 1
     }
     
-    fileWriter(year + "Week" + week + "Custom", rankResult)
+    fileWriter(year + "Week" + week + "Custom", rankResult, user)
     
   }
 }
