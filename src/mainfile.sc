@@ -9,7 +9,7 @@ object mainfile {
   
   //getRecordMap("2014", "3")
   
-  generateRankings("2014", "7", laptopUser)
+  generateRankings("2014", "8", laptopUser)
   
   
   val dummy = "DONE"                              //> dummy  : String = DONE
