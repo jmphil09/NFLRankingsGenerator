@@ -8,7 +8,7 @@ import getRecord._
 
 object mainfile {
 	val year = "2014"                         //> year  : String = 2014
-	val week = "9"                            //> week  : String = 9
+	val week = "10"                           //> week  : String = 10
   val laptopUser = "James"                        //> laptopUser  : String = James
   val pcUser = "fligh_000"                        //> pcUser  : String = fligh_000
   
