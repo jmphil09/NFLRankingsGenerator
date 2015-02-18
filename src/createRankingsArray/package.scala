@@ -14,7 +14,8 @@ package object createRankingsArray {
    "Jaguars" -> "", "Raiders" -> "", "Browns" -> "")
    
    	def updateWeek(map: Map[String, String], week: String): Map[String, String] = {
-   		val filename = "C:/Users/James/Desktop/git-workspace/NFLRankingsGenerator/data/"+year+week+".txt"
+   		val filename = "C:/Users/James/Documents/src/NFLRankingsGenerator/data/"+year+week+".txt"
+      //val filename = "C:/Users/James/Desktop/git-workspace/NFLRankingsGenerator/data/"+year+week+".txt"
    		//val filename = "C:/Users/fligh_000/Desktop/git-workspace/NFLRankingsFetcher/NFLRankingsFetcher/data/"+year+week+".txt"
    		var weekSet = Source.fromFile(filename).getLines().toSet
    		val weekPairArray = weekSet.map(x => x.split(","))
