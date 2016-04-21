@@ -83,7 +83,10 @@ package object espnRankings {
         strResult += line.toString.drop(1).dropRight(1) + "\n"
       }
 
-      fileWriter(year + "Week" + week, strResult, user)
+      for(fileWeek <- week.toInt to 18) {
+        fileWriter(year + "Week" + fileWeek.toString, strResult, user)
+      }
+      
 
     }
 
