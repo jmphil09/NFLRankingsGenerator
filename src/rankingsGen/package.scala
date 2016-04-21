@@ -7,9 +7,11 @@ import scala.collection.mutable._
 
 package object rankingsGen {
   def generateRankings(year: String, week: String, user: String): Unit = {
+    println("generateRankings has been called.")
     val teamRecordMap = getRecordMap(year, week)
     
     def updateRecords(teams: Map[String, team]): Map[String, team] = {
+      println("updateRecords has been called.")
       val keys = teams.keys
       for (k <- keys) {
         val team = teamMap(k)
@@ -20,6 +22,7 @@ package object rankingsGen {
         val opponents = team.opponents
         teamMap(k) = new team(name, wins, losses, opponents)
       }
+      println("Finished updateRecords")
       teamMap
     }
 
