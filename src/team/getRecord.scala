@@ -4,9 +4,11 @@ import scala.io.Source
 
 object getRecord {
   def getRecordMap(year: String, week: String): Map[String, (Int, Int)] = {
+    println("getRecordMap has been called.")
     def countSubstring(str: String, substr: String) = substr.r.findAllMatchIn(str).length
     
     def nthOccurence(str: String, substring: String, index: Int, counter: Int): Int = {
+      //println("nthOccurence has been called: counter: " + counter)
       if(counter==0) index
       else {
         val substrLen = substring.length
@@ -15,13 +17,20 @@ object getRecord {
         else nthOccurence(str.drop(1), substring, index + 1, counter)
       }
     }
-    
+    println("about to check website")
     val dummySite = "http://espn.go.com/nfl/team/_/name/" + "dal" + "/year/" + year
+    println("website has been checked")
+    println("dummySite: " + dummySite)
     val dummyStr = Source.fromURL(dummySite).mkString
+    println("web string has been created")
+    println("STR: " + dummyStr)
     val dropSubstr = year + " Regular Season Schedule"
+    println("dropSubstr has been called")
     val dropIndex = nthOccurence(dummyStr, dropSubstr, 0 , 1) - 500
+    println("dropIndex has finished")
 
     def getWebStr(team: String): String = {
+      println("getWebStr has been called.")
       val site = "http://espn.go.com/nfl/team/_/name/" + team + "/year/" + year
       val str = Source.fromURL(site).mkString
       val trimmedStr = str.drop(dropIndex)
@@ -51,6 +60,7 @@ object getRecord {
     var recordMap = Map("" -> (0, 0))
 
     for (key <- teamMap.keys) {
+      println("for loop has been called")
       recordMap = recordMap + (key -> calcRecord(getWebStr(key)))
     }
 
