@@ -7,20 +7,20 @@ import team._
 import getRecord._
 
 object mainfile {
-	val year = "2015"                         //> year  : String = 2015
-	val week = "18"                           //> week  : String = 18
+	val year = "2016"                         //> year  : String = 2016
+	val week = "1"                            //> week  : String = 1
   val laptopUser = "James"                        //> laptopUser  : String = James
   val pcUser = "fligh_000"                        //> pcUser  : String = fligh_000
-  
-  //createHomeArrays("2015", laptopUser)
-  //createScheduleArrays("2015", laptopUser)
+   
+  //createHomeArrays("2016", pcUser)
+  //createScheduleArrays("2016", pcUser)
 
   //rankingsGen.generateRankings(year, week, laptopUser)
 
-  espnRankings.generateRankings(year, week, laptopUser)
+  //espnRankings.generateRankings(year, week, pcUser)
  
   
-  createRankArrays(year, laptopUser)
+  createRankArrays(year, pcUser)
 
   val dummy = "DONE"                              //> dummy  : String = DONE
 }

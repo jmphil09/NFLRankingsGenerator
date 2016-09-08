@@ -19,7 +19,7 @@ package object createTeamSchedule {
     }
 
     def getOpponent(str: String): String = {
-      val teamStr = """http://espn.go.com/nfl/team/_/name/"""
+      val teamStr = """http://www.espn.com/nfl/team/_/name/"""
 
       def trimStr(s: String): String = {
         if (s.take(teamStr.length).equals(teamStr)) s
@@ -32,7 +32,7 @@ package object createTeamSchedule {
         "kc/" -> "CChiefs", "sd/" -> "CChargers", "pit" -> "CSteelers", "stl" -> "CRams", "nyg" -> "CGiants",
         "det" -> "CLions", "nyj" -> "CJets", "dal" -> "CCowboys", "tb/" -> "CBuccaneers", "mia" -> "CDolphins",
         "ten" -> "CTitans", "hou" -> "CTexans", "buf" -> "CBills", "wsh" -> "CRedskins", "min" -> "CVikings",
-        "jax" -> "CJaguars", "oak" -> "CRaiders", "cle" -> "CBrowns")
+        "jax" -> "CJaguars", "oak" -> "CRaiders", "cle" -> "CBrowns", "la/" -> "CRams")
 
       val trimmedStr = trimStr(str)
       val team = trimmedStr.drop(teamStr.length).take(3)
