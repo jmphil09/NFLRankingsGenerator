@@ -20,3 +20,6 @@ project/plugins/project/
 .cache
 .cache-main
 *.cache
+
+.metadata/*
+sh.exe.stackdump
