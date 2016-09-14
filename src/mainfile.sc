@@ -20,7 +20,7 @@ object mainfile {
   //espnRankings.generateRankings(year, week, pcUser)
  
   
-  createRankArrays(year, pcUser)
+  createRankArrays(year, laptopUser)
 
   val dummy = "DONE"                              //> dummy  : String = DONE
 }
